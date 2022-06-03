@@ -49,6 +49,7 @@ def optimal_change(item_cost, amount_paid):
                 else:
                     answer+=f"1 {value}, "
                     loop_counter+=1
+    #if it's a single occurance switch the ',' with a '.'
     if loop_counter==1:
         return answer[:len(answer)-2]+'.'
     return answer

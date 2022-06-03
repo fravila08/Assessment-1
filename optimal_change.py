@@ -18,10 +18,9 @@ def optimal_change(item_cost, amount_paid):
     cost=math.floor(item_cost*100)
     change=paid - cost
     answer=f"The optimal change for an item that costs ${item_cost} with an amount paid of ${amount_paid} is "
-    #if change is only one pennie, get rid of the 'and' in your statement/exact payment adjust answer/not enough payment inform how much they owe
+    #exact payment adjust answer/not enough payment inform how much they owe
     if change==1:
-        answer+='1 pennie.'
-        return answer
+        return f"The optimal change for an item that costs ${item_cost} with an amount paid of ${amount_paid} is 1 pennie."
     if change==0:
         return f"The item cost was ${item_cost} and you made an exact payment of ${amount_paid}. There is no change to return"
     if change<0:
@@ -29,6 +28,7 @@ def optimal_change(item_cost, amount_paid):
         return f"The item cost is ${item_cost} and you only have ${amount_paid}. You need ${change} to afford this item."
     else:
     #iterate through the values of the directory subtracting the corresponding value from change and adding the correct keys to our answer
+        loop_counter=0
         for value in dollars:
             counter=0
             while change>=dollars[value]:
@@ -38,12 +38,18 @@ def optimal_change(item_cost, amount_paid):
             if counter>1:
                 if value=='pennie':
                     answer+=f"and {counter} {value}s."
+                    loop_counter+=1
                 else:
                     answer+=f"{counter} {value}s, "
+                    loop_counter+=1
             elif counter== 1:
                 if value=='pennie':
                     answer+=f"and 1 {value}."
+                    loop_counter+=1
                 else:
                     answer+=f"1 {value}, "
+                    loop_counter+=1
+    if loop_counter==1:
+        return answer[:len(answer)-2]+'.'
     return answer
     

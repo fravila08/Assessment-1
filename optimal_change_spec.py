@@ -11,3 +11,4 @@ print("7:", optimal_change(23.17,97.99)=="The optimal change for an item that co
 print("8:", optimal_change(5.07,100)=="The optimal change for an item that costs $5.07 with an amount paid of $100 is 1 $50 bill, 2 $20 bills, 4 $1 bills, 3 quarters, 1 dime, 1 nickle, and 3 pennies.")
 print('9:', optimal_change(100, 63.13)=="The item cost is $100 and you only have $63.13. You need $36.87 to afford this item.")
 print('10:', optimal_change(63.13, 63.13)=='The item cost was $63.13 and you made an exact payment of $63.13. There is no change to return')
+print('11:', optimal_change(90, 100)=='The optimal change for an item that costs $90 with an amount paid of $100 is 1 $10 bill.')

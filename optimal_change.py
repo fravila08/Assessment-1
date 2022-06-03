@@ -13,11 +13,10 @@ def optimal_change(item_cost, amount_paid):
         'nickle':5,
         'pennie':1,
     }
+    #Don't want any floating numbers 
     paid=math.floor(amount_paid*100)
     cost=math.floor(item_cost*100)
     change=paid - cost
-    #Don't want any floating numbers 
-    
     answer=f"The optimal change for an item that costs ${item_cost} with an amount paid of ${amount_paid} is "
     #if change is only one pennie, get rid of the 'and' in your statement
     if change==1:
